@@ -2,11 +2,13 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const sequelize = require('./config/database');
+const addminRouter = require('./route/admin/admin'); // Import the admin route
 const app = express();
-const port = 3000;
+const port =  process.env.PORT || 5000;
 
 // Middleware to parse JSON requests
 app.use(express.json());
+app.use('/api',addminRouter);
 
 const SECRET_KEY = process.env.SECRET_KEY || 'your_secret_key'; // Replace with your secret key
 const User = require('./models/User');
