@@ -8,7 +8,7 @@ const port = 3000;
 // Middleware to parse JSON requests
 app.use(express.json());
 
-const secret_pwd = require('dotenv').config(); // Replace with your secret key
+const SECRET_KEY = process.env.SECRET_KEY || 'your_secret_key'; // Replace with your secret key
 const User = require('./models/User');
 
 sequelize.sync()
@@ -31,7 +31,7 @@ app.post('/signup', async (req, res) => {
 
         const token = jwt.sign(
             {userId: newUser.id, email:newUser.email, PASSWORD: hashedPassword },
-            secret_pwd.parsed.SECRET_KEY, // Replace with your secret key
+            SECRET_KEY, // Replace with your secret key
             { expiresIn: '1h' } // Token expiration time    
         )
 
