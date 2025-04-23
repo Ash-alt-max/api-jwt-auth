@@ -25,9 +25,7 @@ router.post('/signup', async (req, res) => {
             SECRET_KEY, // Replace with your secret key
             { expiresIn: '1h' } // Token expiration time    
         )
-
-        // Save the user
-        // const newUser = await User.create({ username, email, password });
+        
         res.status(201).json({ message: 'User created successfully', token, code: 201 });
     } catch (error) {
         console.log('Error creating user:', error);
