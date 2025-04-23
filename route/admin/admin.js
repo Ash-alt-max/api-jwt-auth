@@ -2,7 +2,6 @@ const express = require('express');
 const authenticateToken = require('../../middleware/authMiddleware'); // Import the authentication middleware
 
 const router = express.Router();
-console.log('Admin router loaded________________'); // Debugging statement
 
 router.use(authenticateToken); // Protect all routes in this router
 
@@ -14,4 +13,4 @@ router.get('/settings', (req, res) => {
     res.json({ message: 'User settings' });
 });
 
-module.exports = router
+module.exports = router;
