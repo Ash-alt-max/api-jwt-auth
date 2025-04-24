@@ -1,12 +1,10 @@
 const express = require('express');
 const authenticateToken = require('../../middleware/authMiddleware'); // Import the authentication middleware
-
+const productController = require('../../controller/users');
 const router = express.Router();
 
 router.use(authenticateToken); // Protect all routes in this router
 
-router.get('/settings', (req, res) => {
-    res.json({ message: 'User settings' });
-});
+router.get('/user/:id', productController.getUserById); // Insert a new product
 
 module.exports = router;
