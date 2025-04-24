@@ -11,7 +11,7 @@ const port =  process.env.PORT || 5000;
 app.use(express.json());
 app.use('/api',addminRouter);
 app.use('',authRouter);
-app.use('/api', productsRouter);
+app.use('', productsRouter);
 
 sequelize.sync()
     .then(() => console.log('Database synchronized!'))

@@ -17,6 +17,10 @@ const Product = sequelize.define('Product', {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
+    categories: {
+        type: DataTypes.INTEGER, // Assuming categories are stored as an array of strings
+        defaultValue: 0
+    },
     createdAt: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW
