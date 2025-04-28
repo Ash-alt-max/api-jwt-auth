@@ -11,6 +11,10 @@ const Address = sequelize.define('Address', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  street_name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   city: {
     type: DataTypes.STRING,
     allowNull: false,
