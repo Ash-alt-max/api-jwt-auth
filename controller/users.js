@@ -1,6 +1,7 @@
 const Users = require('../models/User');
 const Address = require('../models/Address');
 const sequelize = require('../config/database');
+// import nodemailer from 'nodemailer';
 
 exports.getUserById = async function getUserById(req, res) {
     try {
